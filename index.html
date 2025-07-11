@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ========== CSS ========== -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ========== Iconsout CSS ========== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <title>Responsive Registration Form</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+    <header>Registration</header>
+    
+    <form action="#">
+      <div class="form first">
+        <div class="details personal">
+          <span class="title">Personal Details</span>
+          
+             <div class="fields">
+                <div class="input-field">
+                  <label>Full Name</label>
+                 <input type="text" placeholder="Enter your name" required  minlength="5" maxlength="50">
+                </div>
+                <div class="input-field">
+                  <label>Date of Birth</label>
+                  <input type="date" placeholder="Enter Date of Birth" required>
+               </div>
+                <div class="input-field">
+                <label>Email ID</label>
+                 <input type="email" placeholder="Enter your Email" required>
+                </div>
+
+            <div class="input-field">
+              <label>Mobile No</label>
+              <input type="tel" placeholder="Enter your Number" required pattern="[0-9]{10}" >
+            </div>
+            <div class="input-field">
+              <label>Gender</label>
+              <div class="gender-options" >
+               <input type="radio" name="gender" value="Male" required> Male
+               <input type="radio" name="gender" value="Female"> Female
+               <input type="radio" name="gender" value="Other"> Other
+              </div>
+             
+            </div>
+            <div class="input-field">
+              <label>Age</label>
+              <input type="number" placeholder="Enter your Age" required min="0" max="120">
+            </div>
+          </div>
+        </div>
+         <div class="details ID">
+          <span class="title">Identity Details</span>
+          
+          <div class="fields">
+            <div class="input-field">
+              <label>Aadhar Number</label>
+              <input type="text" placeholder="Enter your Aadhar Number" required  pattern="[0-9]{12}">
+            </div>
+            <div class="input-field">
+              <label>State</label>
+               <input type="text" placeholder="Enter your State" required>
+             
+            </div>
+        
+            <div class="input-field">
+               <label>Address</label>
+
+               <input  placeholder="Enter your Address" required>
+             
+            </div>
+            
+          </div>
+           
+          </div>
+           <div class="details Health">
+          <span class="title">Details for Appointment</span>
+          
+          <div class="fields">
+            <div class="input-field">
+              <label>Health insurance?</label>
+              <input type="text" placeholder="Type Yes or No" required >
+            </div>
+
+            
+            <div class="input-field">
+  <label>Preferred Appointment Time Slot</label>
+  <select required>
+    <option value="" disabled selected>Select a time slot</option>
+    <option value="9-10am">9:00 - 10:00 AM</option>
+    <option value="10-11am">10:00 - 11:00 AM</option>
+    <option value="11-12pm">11:00 - 12:00 PM</option>
+    <option value="2-3pm">2:00 - 3:00 PM</option>
+    <option value="3-4pm">3:00 - 4:00 PM</option>
+  </select>
+</div>
+            <div class="input-field">
+              <label>Symptoms</label>
+                <textarea placeholder="Describe your symptoms" required minlength="10" rows="3"></textarea>
+             
+            </div>
+        
+            
+          </div>
+           <div class="input-field" >
+  <label className="flex items-center">
+    <input type="checkbox"  required>
+    I confirm the above information is accurate.
+  </label>
+</div>
+
+<!-- Submit and Reset buttons (place at the end of the form) -->
+
+          </div>
+      </div>
+      <div style="display: flex; gap: 16px; margin-top: 20px;">
+  <button type="submit" class="nextBtn">
+    <span class="btnText">Submit</span>
+    <i class="uil uil-navigator"></i>
+  </button>
+  <button type="reset" class="nextBtn" style="background-color: #ccc; color: #333;">
+    <span class="btnText">Reset</span>
+    <i class="uil uil-refresh"></i>
+  </button>
+</div>
+    </form>
+
+  </div>
+
+
+</body>
+</html>
