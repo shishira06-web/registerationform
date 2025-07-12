@@ -29,7 +29,7 @@ body {
   border-radius: 6px;
   padding: 30px;
   margin: 0 15px;
-  background-color:rgba(255, 255, 255, 0.2);
+  background-color:rgba(255, 255, 255, 1);
   
 }
 
@@ -259,6 +259,12 @@ form .fields .input-field {
 
  
 }
+.input-field input:is(:focus,:valid) {
+  border-color: #4070f4;
+  box-shadow: 0 3px 5px rgba(64, 112, 244, 0.5);
+}
+
+
 .input-field input {
   outline: none;
   margin: 8px 0;
@@ -288,7 +294,12 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+#back-btn{
+  border: none;
+  outline: none;
+  background-color: transparent; /* Optional: if you want no background */
+  box-shadow: none; 
+}
 .container form button {
   margin-top: 20px;
   display: flex;
@@ -307,7 +318,27 @@ input[type="number"]::-webkit-inner-spin-button {
   transition: all 0.3s ease;
 
 }
-form button:hover {
+.nextBtn  {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px ;
+  width: 100%;
+  background-color: #4070f4;
+  color: #fff;
+  font-size: 16px;  
+  font-weight: 500;
+  border: none  !important; 
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+button:hover,
+.nextBtn:hover {
   background-color: #365bbf;
 }
  form button i {
@@ -401,7 +432,7 @@ form button:hover {
 }
 
 
-.link:hover,.active {
+.link:hover {
 
   border-bottom: 2px solid #6dc4c2; /* Optional: underline effect */
 } 

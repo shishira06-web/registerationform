@@ -31,3 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
     alert("Form submitted successfully! Check the console for data.");
   });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  // ...existing form logic...
+
+  // Show About section when About link is clicked
+  document.getElementById('about-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('.container').style.display = 'none';
+    document.getElementById('about-section').style.display = 'block';
+  });
+
+  // Back to Registration
+  document.getElementById('back-btn').addEventListener('click', function() {
+    document.getElementById('about-section').style.display = 'none';
+    document.querySelector('.container').style.display = 'block';
+  });
+});
