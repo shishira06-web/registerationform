@@ -14,16 +14,23 @@ body {
   align-items: center;
   justify-content: center;
   background: #4070f4;
+  background: url("bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 .container {
-  position: relative;
-  max-width: 900px;
+   position: relative;
+  top: 100px; 
+  max-width: 900px; /* Increase this value for wider form */
   width: 100%;
   border-radius: 6px;
   padding: 30px;
   margin: 0 15px;
-  background-color: #fff;
+  background-color:rgba(255, 255, 255, 0.2);
+  
 }
 
 .container header {
@@ -34,7 +41,7 @@ body {
 }
 
 .container header::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -45,12 +52,19 @@ body {
 }
 
 .container form {
+  margin:20px ;
+  padding: 20px;
+  border-radius: 10px;
   position: relative;
   margin-top: 16px;
   min-height: 490px;
-  background-color: #fff;
+  background-color:rgba(255, 255, 255, 0.1);
 }
+.container form.form
+{
+  position: absolute;
 
+}
 .container form .details {
   margin-top: 30px;
 }
@@ -70,31 +84,119 @@ body {
 .gender-options {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 2%;
   margin-top  : 0px;
   font-size: 14px;
-  margin:6px
+  margin:6px;
+  width: 100%;
+  flex-wrap: wrap;   
+ 
+
 }
+
+@media (max-width: 500px) {
+  .gender-options {
+    flex-direction: row;        /* Or column if you prefer vertical stacking */
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 500px) {
+ 
+  .gender-options input[type="radio"] {
+    width: 18px;
+    height: 1x;
+    gap: 80px;
+  }
+  .gender-options label {
+    font-size: 12px;
+    margin-right: 8px;
+    gap: 80px;
+  }
+}
+@media (max-width: 500px) {
+  .fields .input-field {
+    width: 100%;
+  }
+}
+
+/* Add this to your style.css */
+.custom-radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 12px;
+   width: 25%;
+  height: 10%;
+  font-size: 14px;
+  gap: 80px;
+ 
+}
+
+.custom-radio input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+     width: 23%;
+      min-width: 50px;
+  height: 100%;
+  cursor: pointer;
+   gap: 80px;
+  
+}
+
+.radio-label {
+   min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+     width: 33%;
+  height: 10%;
+  border: 1px solid #a9a9ae;
+  border-radius: 16px;
+  background:rgba(255, 255, 255, 0.5);
+  color: #59595dc5;
+  font-size: 14px;
+  font-weight: 400;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+gap: 80px;
+}
+
+.custom-radio input[type="radio"]:checked + .radio-label {
+  background: #4070f4;
+  color: #747272;
+  border-color: #4070f4;
+  gap: 80px;
+}
+
 input[type="radio"] {
-  width: 6px;
-  height: 6px;
+  width: 12%;
+  height: 12%;
   appearance: none;              /* Remove default style */
   border: 2px solid #999;
   border-radius: 50%;            /* Make it a circle */
   background-color: #fff;
   outline: none;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;}
+  transition: all 0.2s ease-in-out;
+gap: 80px;}
 
 .gender-options label {
-  margin-right: 15px;
+  margin-right: 7px;
   font-weight: normal;
+  gap: 80px;
 }
 input[type="radio"]:checked {
   background-color: #4070f4;     /* Change background when checked */
-  border-color: #4070f4;         /* Change border color when checked */
+  border-color: #4070f4; 
+  gap: 80px;        /* Change border color when checked */
 } 
 input[type="radio"]:focus {
+  gap: 80px;
   box-shadow: none;
 }
 
@@ -222,7 +324,7 @@ form button:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  background: #fff;
+  background:rgba(255, 255, 255, 0.7);
 }
 
 
@@ -235,9 +337,9 @@ form button:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
-  color: #5c5a5a;
+  color: #6f6e71;
   font-weight: 400;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
    outline: none;
 }
@@ -250,4 +352,56 @@ form button:hover {
 .input-field textarea:is(:focus,:valid) {
   border-color: #4070f4;
   box-shadow: 0 3px 5px rgba(64, 112, 244, 0.5);
+}/* Simple responsive navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #333a4c;
+  padding: 0.5rem 0;
+  color: #fff;
+  margin-bottom: 0; /* Remove margin-bottom for fixed nav */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Optional: subtle shadow */
 }
+.navbar-container {
+  width: 100%; /* Adjust this value for wider navbar */
+  max-width: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+   font-family: 'Roboto', Arial, sans-serif;
+   gap: 12px; 
+   text-decoration: none;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+
+.link:hover,.active {
+
+  border-bottom: 2px solid #6dc4c2; /* Optional: underline effect */
+} 
